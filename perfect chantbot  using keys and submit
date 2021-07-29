@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+        function talk(){
+            var know = {
+                "hi":"hiiiiii",
+                "hello":"fine",
+                "ok":"k"
+            }
+            var user = document.getElementById("box").value;
+           
+            if(user in know){
+            document.getElementById("replace").innerHTML = know[user];
+            document.getElementById("box").value=""
+           
+            }
+            else{
+            document.getElementById("replace").innerHTML = "sorry";
+            }
+        }
+        function nav(event){
+        if (event.keyCode == 13){
+        talk()        }
+        }
+        </script>
+    </head>
+<body>
+    <h1 id="replace">type</h1>
+<input id="box" type="text" onkeydown = nav(event)>
+<input id="demo" type="submit" value="submit" onclick=talk()>
+</body>
+</html>
